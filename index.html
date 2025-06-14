@@ -1,32 +1,292 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tentang Saya - Nabila Fadha</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadha - UI/UX Designer & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d35656;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+            padding: 60px 0;
+            background: white;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            min-height: 70vh;
+        }
+
+        .hero-text {
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #d35656;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Navigation Arrow */
+        .nav-arrow {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .nav-arrow:hover {
+            background: #d35656;
+            border-color: #d35656;
+        }
+
+        .nav-arrow:hover::after {
+            color: white;
+        }
+
+        .nav-arrow::after {
+            content: '→';
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-images {
+                max-width: 100%;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            .nav-arrow {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a class="active" href="index.html">Tentang Saya</a></li>
-      <li><a href="skills.html">Skill</a></li>
-      <li><a href="portfolio.html">Portofolio</a></li>
-      <li><a href="contact.html">Kontak</a></li>
-    </ul>
-  </nav>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h1>Hai, Saya Nabila Fadha</h1>
-    <p>UX Enthusiast | QA Learner | Front-End Explorer</p>
-  </section>
+    <main>
+        <div class="container">
+            <section class="hero-section fade-in">
+                <div class="hero-text">
+                    <h1>Hi There, I'm fadha!</h1>
+                    <p>I'm currently studying Information Systems at UPN Veteran Jakarta, where I've been exploring UI/UX design, front-end development, and collaborative work through projects and campus organizations.</p>
+                    <p>From wireframes to fully working websites, I enjoy turning ideas into simple, user-centered digital experiences.</p>
+                    <p>It's still early in the journey and I'm just getting started!</p>
+                </div>
+                <div class="hero-images">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face" alt="Campus photo" />
+                    </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=250&fit=crop&crop=faces" alt="Group photo" />
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-  <section class="about">
-    <h2>Tentang Saya</h2>
-    <p>Saya adalah mahasiswi Ilmu Komputer dengan minat di bidang UI/UX, Front-End Development, dan juga eksplorasi QA untuk memahami kualitas produk dari sisi pengguna.</p>
-  </section>
+    <div class="nav-arrow" onclick="scrollToNext()"></div>
 
-  <footer>
-    <p>&copy; 2025 Nabila Fadha</p>
-  </footer>
+    <script>
+        function scrollToNext() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add smooth entrance animation
+        window.addEventListener('load', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 1s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 200);
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

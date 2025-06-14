@@ -1,32 +1,126 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Skill - Nabila Fadha</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Fadha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Tentang Saya</a></li>
-      <li><a class="active" href="skills.html">Skill</a></li>
-      <li><a href="portfolio.html">Portofolio</a></li>
-      <li><a href="contact.html">Kontak</a></li>
-    </ul>
-  </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="section">
-    <h2>Skill</h2>
-    <ul class="skill-list">
-      <li>UI/UX Design (Figma)</li>
-      <li>Front-End Development (HTML, CSS, JS)</li>
-      <li>Quality Assurance (Manual Testing, Basic Automation)</li>
-      <li>Tools: Git, GitHub, Notion, Trello</li>
-    </ul>
-  </section>
+    <main>
+        <div class="container">
+            <section class="section fade-in">
+                <h1>My Skills</h1>
+                <p>Here are the technical skills and tools I've developed throughout my journey in Information Systems and UI/UX design.</p>
+                
+                <h2>Design Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>UI/UX Design</strong> - Creating user-centered interfaces and experiences</li>
+                    <li><strong>Wireframing & Prototyping</strong> - From low-fidelity sketches to interactive prototypes</li>
+                    <li><strong>User Research</strong> - Understanding user needs and behaviors</li>
+                    <li><strong>Information Architecture</strong> - Organizing and structuring content effectively</li>
+                    <li><strong>Visual Design</strong> - Typography, color theory, and layout principles</li>
+                </ul>
 
-  <footer>
-    <p>&copy; 2025 Nabila Fadha</p>
-  </footer>
+                <h2>Technical Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>HTML5</strong> - Semantic markup and accessibility best practices</li>
+                    <li><strong>CSS3</strong> - Responsive design, animations, and modern layouts</li>
+                    <li><strong>JavaScript</strong> - Interactive web functionality and DOM manipulation</li>
+                    <li><strong>React.js</strong> - Component-based front-end development</li>
+                    <li><strong>Node.js</strong> - Backend development and API creation</li>
+                    <li><strong>Database Management</strong> - MySQL, MongoDB for data storage</li>
+                    <li><strong>Version Control</strong> - Git and GitHub for project management</li>
+                </ul>
+
+                <h2>Design Tools</h2>
+                <ul class="skill-list">
+                    <li><strong>Figma</strong> - Primary tool for UI design and prototyping</li>
+                    <li><strong>Adobe XD</strong> - User experience design and wireframing</li>
+                    <li><strong>Adobe Photoshop</strong> - Image editing and graphic design</li>
+                    <li><strong>Adobe Illustrator</strong> - Vector graphics and icon design</li>
+                    <li><strong>Principle</strong> - Animation and interaction design</li>
+                </ul>
+
+                <h2>Development Tools</h2>
+                <ul class="skill-list">
+                    <li><strong>Visual Studio Code</strong> - Primary code editor with extensions</li>
+                    <li><strong>Chrome DevTools</strong> - Debugging and performance optimization</li>
+                    <li><strong>Postman</strong> - API testing and documentation</li>
+                    <li><strong>Webpack</strong> - Module bundling and build optimization</li>
+                    <li><strong>NPM/Yarn</strong> - Package management for Node.js projects</li>
+                </ul>
+
+                <h2>Soft Skills</h2>
+                <ul class="skill-list">
+                    <li><strong>Project Management</strong> - Agile methodologies and task organization</li>
+                    <li><strong>Team Collaboration</strong> - Working effectively in diverse teams</li>
+                    <li><strong>Problem Solving</strong> - Analytical thinking and creative solutions</li>
+                    <li><strong>Communication</strong> - Presenting ideas clearly to stakeholders</li>
+                    <li><strong>Time Management</strong> - Balancing multiple projects and deadlines</li>
+                    <li><strong>Continuous Learning</strong> - Staying updated with industry trends</li>
+                </ul>
+
+                <h2>Currently Learning</h2>
+                <ul class="skill-list">
+                    <li><strong>TypeScript</strong> - Adding type safety to JavaScript projects</li>
+                    <li><strong>Vue.js</strong> - Exploring alternative front-end frameworks</li>
+                    <li><strong>Python</strong> - Data analysis and backend development</li>
+                    <li><strong>Docker</strong> - Containerization for development and deployment</li>
+                    <li><strong>AWS</strong> - Cloud services and deployment strategies</li>
+                </ul>
+
+                <div style="text-align: center; margin-top: 40px; padding: 30px; background-color: #f5f5f5; border-radius: 10px;">
+                    <h3>Ready to Collaborate?</h3>
+                    <p>I'm always excited to work on new projects and learn from experienced professionals. Let's create something amazing together!</p>
+                    <p style="margin-top: 20px;">
+                        <a href="contact.html" style="background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; transition: background-color 0.3s;">Let's Work Together</a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="nav-arrow" onclick="scrollToTop()"></div>
+
+    <footer>
+        <p>&copy; 2025 Fadha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add smooth entrance animation
+        window.addEventListener('load', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 1s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 200);
+            });
+        });
+    </script>
 </body>
 </html>

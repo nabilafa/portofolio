@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Fadha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="about fade-in">
+                <h1>About Me</h1>
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="images/profile.jpg" alt="Fadha Profile" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+                
+                <h2>Background</h2>
+                <p>Hello! I'm Fadha, a passionate Information Systems student at UPN Veteran Jakarta. My journey in tech began with curiosity about how digital experiences are created and how they can impact people's lives.</p>
+                
+                <h2>Education</h2>
+                <p><strong>UPN Veteran Jakarta</strong><br>
+                Bachelor's Degree in Information Systems<br>
+                <em>Current Student</em></p>
+                
+                <h2>What I Do</h2>
+                <p>I specialize in UI/UX design and front-end development, focusing on creating intuitive and user-friendly digital experiences. Through various projects and campus organizations, I've developed skills in:</p>
+                <ul>
+                    <li>User Interface (UI) Design</li>
+                    <li>User Experience (UX) Research</li>
+                    <li>Front-end Web Development</li>
+                    <li>Collaborative Project Management</li>
+                    <li>Wireframing and Prototyping</li>
+                </ul>
+                
+                <h2>My Approach</h2>
+                <p>I believe in the power of simple, user-centered design. Every project I work on starts with understanding the user's needs and translating those insights into clean, functional, and beautiful digital solutions.</p>
+                
+                <h2>Beyond Work</h2>
+                <p>When I'm not designing or coding, you can find me exploring new design trends, participating in campus activities, or collaborating with fellow students on exciting projects. I'm always eager to learn new technologies and improve my skills.</p>
+                
+                <h2>Let's Connect</h2>
+                <p>I'm always open to new opportunities, collaborations, and conversations about design and technology. Feel free to reach out if you'd like to work together or just chat about UX/UI!</p>
+            </section>
+        </div>
+    </main>
+
+    <div class="nav-arrow" onclick="scrollToTop()"></div>
+
+    <footer>
+        <p>&copy; 2025 Fadha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add smooth entrance animation
+        window.addEventListener('load', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    element.style.transition = 'all 1s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
