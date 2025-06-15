@@ -1,291 +1,185 @@
+       
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadha - UI/UX Designer & Developer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f8f8;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #d35656;
-        }
-
-        /* Main Content */
-        main {
-            margin-top: 100px;
-            padding: 60px 0;
-            background: white;
-        }
-
-        .hero-section {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-            min-height: 70vh;
-        }
-
-        .hero-text {
-            text-align: left;
-            max-width: 800px;
-        }
-
-        .hero-text h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #d35656;
-            margin-bottom: 30px;
-            line-height: 1.1;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .hero-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .image-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Navigation Arrow */
-        .nav-arrow {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 60px;
-            height: 60px;
-            border: 3px solid #333;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .nav-arrow:hover {
-            background: #d35656;
-            border-color: #d35656;
-        }
-
-        .nav-arrow:hover::after {
-            color: white;
-        }
-
-        .nav-arrow::after {
-            content: '→';
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                gap: 40px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-images {
-                max-width: 100%;
-            }
-
-            nav ul {
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 16px;
-            }
-
-            .nav-arrow {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .hero-images {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Loading animation */
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>Fadha - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Glassmorphism Header -->
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="hero-section fade-in">
-                <div class="hero-text">
-                    <h1>Hi There, I'm fadha!</h1>
-                    <p>I'm currently studying Information Systems at UPN Veteran Jakarta, where I've been exploring UI/UX design, front-end development, and collaborative work through projects and campus organizations.</p>
-                    <p>From wireframes to fully working websites, I enjoy turning ideas into simple, user-centered digital experiences.</p>
-                    <p>It's still early in the journey and I'm just getting started!</p>
-                </div>
-                <div class="hero-images">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=face" alt="Campus photo" />
+    <!-- Main Content -->
+    <main class="main-content">
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi There, I'm fadha!</h1>
+                    <div class="hero-description">
+                        <p>I'm currently studying Information Systems at UPN Veteran Jakarta, where I've been exploring UI/UX design, front-end development, and collaborative work through projects and campus organizations.
+                            From wireframes to fully working websites, I enjoy turning ideas into simple, user-centered digital experiences.
+                        </p>
+                        <p>It's still early in the journey and I'm just getting started!</p>
                     </div>
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=250&fit=crop&crop=faces" alt="Group photo" />
+                    
+                    <div class="cta-buttons">
+                        <a href="#portfolio" class="btn btn-primary">
+                            View My Work
+                            <span>→</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            Get In Touch
+                        </a>
                     </div>
                 </div>
-            </section>
-        </div>
+                
+                <div class="photo-gallery">
+                    <div class="photo-item photo-left">
+                        <img src="images/fadha1.jpg" alt="Fadha at campus" class="photo">
+                        <div class="photo-overlay">
+                            <h3>Campus Life</h3>
+                            <p>Learning and growing at UPN Veteran Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="photo-item photo-right">
+                        <img src="images/fadha2.jpg" alt="Fadha with friends" class="photo">
+                        <div class="photo-overlay">
+                            <h3>Team Work</h3>
+                            <p>Collaborating with amazing people</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <div class="nav-arrow" onclick="scrollToNext()"></div>
-
     <script>
-        function scrollToNext() {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        }
-
-        // Add smooth entrance animation
-        window.addEventListener('load', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove loading screen
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').style.opacity = '0';
                 setTimeout(() => {
-                    element.style.transition = 'all 1s ease';
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, 200);
-            });
-        });
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 500);
+            }, 1000);
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'white';
-                header.style.backdropFilter = 'none';
-            }
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backdropFilter = 'blur(25px)';
+                    header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.1)';
+                    header.style.backdropFilter = 'blur(20px)';
+                    header.style.boxShadow = 'none';
+                }
+            });
+
+            // Enhanced photo hover effects
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-20px) scale(1.03)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = this.classList.contains('photo-left') ? 
+                        'translateY(3rem) scale(1)' : 'translateY(-2rem) scale(1)';
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            document.querySelectorAll('.photo-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                observer.observe(item);
+            });
+
+            // Cursor trail effect
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-trail';
+            cursor.style.cssText = `
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                background: radial-gradient(circle, rgba(196, 68, 75, 0.3), transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                transition: transform 0.1s ease;
+            `;
+            document.body.appendChild(cursor);
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+            });
+
+            // Add floating animation to CTA buttons
+            const ctaButtons = document.querySelectorAll('.btn');
+            ctaButtons.forEach((btn, index) => {
+                btn.style.animationDelay = `${index * 0.2}s`;
+                btn.style.animation = 'fadeInUp 0.8s ease forwards';
+            });
         });
     </script>
 </body>
