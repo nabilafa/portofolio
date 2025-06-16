@@ -1,186 +1,158 @@
-       
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadha - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Nabila Fadha Azahri - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-pills">
+                <a href="#about" class="nav-link active">About Me</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Glassmorphism Header -->
-    <header class="header">
-        <nav class="navbar">
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">About Me</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Hi There, I'm fadha!</h1>
-                    <div class="hero-description">
-                        <p>I'm currently studying Information Systems at UPN Veteran Jakarta, where I've been exploring UI/UX design, front-end development, and collaborative work through projects and campus organizations.
-                            From wireframes to fully working websites, I enjoy turning ideas into simple, user-centered digital experiences.
-                        </p>
-                        <p>It's still early in the journey and I'm just getting started!</p>
-                    </div>
-                    
-                    <div class="cta-buttons">
-                        <a href="#portfolio" class="btn btn-primary">
-                            View My Work
-                            <span>→</span>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            Get In Touch
-                        </a>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-name">NABILA FADHA AZAHRI</h1>
+                    <p class="hero-description">
+                        Hi! I'm Fadha, an Information Systems student at UPN Veteran Jakarta who loves creating clean, user-friendly digital experiences. I enjoy working on UI/UX design, front-end development, and collaborating in teams. I'm always excited to learn, grow, and bring ideas to life!
+                    </p>
                 </div>
-                
-                <div class="photo-gallery">
-                    <div class="photo-item photo-left">
-                        <img src="images/fadha1.jpg" alt="Fadha at campus" class="photo">
-                        <div class="photo-overlay">
-                            <h3>Campus Life</h3>
-                            <p>Learning and growing at UPN Veteran Jakarta</p>
-                        </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="fadha1.jpg" alt="Nabila Fadha Azahri" class="profile-image">
+                        <div class="image-bg-circle"></div>
                     </div>
-                    <div class="photo-item photo-right">
-                        <img src="images/fadha2.jpg" alt="Fadha with friends" class="photo">
-                        <div class="photo-overlay">
-                            <h3>Team Work</h3>
-                            <p>Collaborating with amazing people</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scroll-indicator">
-                    <span>Scroll to explore</span>
-                    <div class="scroll-arrow"></div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Remove loading screen
-            setTimeout(() => {
-                document.getElementById('loadingOverlay').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                }, 500);
-            }, 1000);
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>UI/UX Design</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Adobe XD</span>
+                        <span class="skill-item">Sketch</span>
+                        <span class="skill-item">Prototyping</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Front-end Development</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Vue.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Photoshop</span>
+                        <span class="skill-item">Illustrator</span>
+                        <span class="skill-item">Team Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Project Image</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Website</h3>
+                        <p>Modern e-commerce platform with clean UI and smooth user experience</p>
+                        <div class="project-tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">React</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Project Image</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile App Design</h3>
+                        <p>User-friendly mobile application design for productivity</p>
+                        <div class="project-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Mobile UI</span>
+                            <span class="tag">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">Project Image</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dashboard Interface</h3>
+                        <p>Clean and intuitive dashboard design for data visualization</p>
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Data Viz</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Header scroll effect
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.style.background = 'rgba(255, 255, 255, 0.95)';
-                    header.style.backdropFilter = 'blur(25px)';
-                    header.style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)';
-                } else {
-                    header.style.background = 'rgba(255, 255, 255, 0.1)';
-                    header.style.backdropFilter = 'blur(20px)';
-                    header.style.boxShadow = 'none';
-                }
-            });
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-description">
+                    Let's collaborate and bring your ideas to life! Feel free to reach out for any opportunities or just to say hello.
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:nabila.fadha@example.com" class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>nabila.fadha@example.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/nabilafadha" class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/nabilafadha" class="contact-item">
+                        <span class="contact-icon">🔗</span>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Enhanced photo hover effects
-            const photoItems = document.querySelectorAll('.photo-item');
-            photoItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-20px) scale(1.03)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = this.classList.contains('photo-left') ? 
-                        'translateY(3rem) scale(1)' : 'translateY(-2rem) scale(1)';
-                });
-            });
-
-            // Intersection Observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for scroll animations
-            document.querySelectorAll('.photo-item').forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(50px)';
-                observer.observe(item);
-            });
-
-            // Cursor trail effect
-            const cursor = document.createElement('div');
-            cursor.className = 'cursor-trail';
-            cursor.style.cssText = `
-                position: fixed;
-                width: 20px;
-                height: 20px;
-                background: radial-gradient(circle, rgba(196, 68, 75, 0.3), transparent);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 9999;
-                transition: transform 0.1s ease;
-            `;
-            document.body.appendChild(cursor);
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX - 10 + 'px';
-                cursor.style.top = e.clientY - 10 + 'px';
-            });
-
-            // Add floating animation to CTA buttons
-            const ctaButtons = document.querySelectorAll('.btn');
-            ctaButtons.forEach((btn, index) => {
-                btn.style.animationDelay = `${index * 0.2}s`;
-                btn.style.animation = 'fadeInUp 0.8s ease forwards';
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
