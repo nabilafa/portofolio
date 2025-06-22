@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nabila Fadha Azahri - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/skills.css">
+    <link rel="stylesheet" href="css/sections/portfolio.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-pills">
@@ -20,7 +29,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- About Me Section (Hero) -->
     <section class="hero" id="about">
         <div class="hero-container">
             <div class="hero-content">
@@ -33,7 +42,7 @@
                 <div class="hero-image">
                     <div class="image-container">
                         <div class="image-bg-circle"></div>
-                        <img src="images/preview.png" alt="Nabila Fadha Azahri" class="profile-image">
+                        <img src="assets/images/preview.png" alt="Nabila Fadha Azahri" class="profile-image">
                     </div>
                 </div>
             </div>
@@ -70,6 +79,17 @@
                         <span class="skill-item">Photoshop</span>
                         <span class="skill-item">Illustrator</span>
                         <span class="skill-item">Team Collaboration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Leadership</span>
+                        <span class="skill-item">Public Speaking</span>
+                        <span class="skill-item">Time Management</span>
+                        <span class="skill-item">Problem Solving</span>
+                        <span class="skill-item">Empathy</span>
+                        <span class="skill-item">Teamwork</span>
                     </div>
                 </div>
             </div>
@@ -133,26 +153,45 @@
             <h2 class="section-title">Contact</h2>
             <div class="contact-content">
                 <p class="contact-description">
-                    Let's collaborate and bring your ideas to life! Feel free to reach out for any opportunities or just to say hello.
+                    Let’s be friends and create together!
+                    I’m always happy to connect, collaborate, or simply have a good conversation. Feel free to reach out anytime!
                 </p>
                 <div class="contact-info">
-                    <a href="mailto:nabila.fadha@example.com" class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <span>nabila.fadha@example.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/nabilafadha" class="contact-item">
-                        <span class="contact-icon">💼</span>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                    <a href="https://github.com/nabilafadha" class="contact-item">
-                        <span class="contact-icon">🔗</span>
-                        <span>GitHub Profile</span>
+                    <a href="mailto:nabilafadha9@gmail.com" class="contact-item">
+                        <span>nabilafadha9@gmail.com</span>
+                    <a href="https://www.linkedin.com/in/nabilafadha" class="contact-item" target="_blank" rel="noopener">
+                        <span>linkedin / nabilafadha</span>
+                    <a href="https://www.instagram.com/nbilafadha" class="contact-item" target="_blank" rel="noopener">
+                        <span>Instagram / nbilafadha</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 </body>
 </html>
